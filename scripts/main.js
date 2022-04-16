@@ -1,6 +1,7 @@
 import { BubbleSort } from "./bubble_sort.js";
 import { InsertionSort } from "./insertion_sort.js";
 import { Merge } from "./merge_sort.js";
+import { Quick } from "./quick_sort.js";
 import { SelectionSort } from "./selection_sort.js";
 ///////////Selecting Elements///////////
 ////Containers
@@ -30,6 +31,7 @@ const insertionSortbtn = document.querySelector(".insertionsortbtn");
 const heapSortbtn = document.querySelector(".heapsortbtn");
 const bubbleSortbtn = document.querySelector(".bubblesortbtn");
 const genarraybtn = document.querySelector(".generate-array");
+const quickSortbtn = document.querySelector(".quicksortbtn");
 ////////Sections
 const footer = document.querySelector(".footer");
 //////////////////////////////////
@@ -95,6 +97,9 @@ export function towers_update_color(tower_1, tower_2, color) {
 export function tower_update_color(tower, color) {
   tower.style.backgroundColor = color;
 }
+export function tower_update_height(tower, height) {
+  tower.style.height = `${height}rem`;
+}
 ////////////////////Event Listeners
 sizeSlider.addEventListener("input", changeSize);
 speedSlider.addEventListener("input", changeSpeed);
@@ -103,3 +108,4 @@ bubbleSortbtn.addEventListener("click", BubbleSort);
 insertionSortbtn.addEventListener("click", InsertionSort);
 mergeSortbtn.addEventListener("click", Merge);
 selectionSortbtn.addEventListener("click", SelectionSort);
+quickSortbtn.addEventListener("click", Quick);

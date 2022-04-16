@@ -1,55 +1,77 @@
-import { sizeofArr, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor } from "./main.js";
+import { sizeofArr, tower_update_height, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor } from "./main.js";
 
 export function Merge() {
-
-    merge_partition(0, sizeofArr - 1);
-
+    // console.log("here");
+    mergeSort(towers_sizes, 0, sizeofArr - 1);
 }
+function merge(arr, l, m, r) {
+    var n1 = m - l + 1;
+    var n2 = r - m;
 
-export async function MergeSort(start, mid, end) {
-    let p = start, q = mid + 1;
+    // Create temp arrays
+    var L = new Array(n1);
+    var R = new Array(n2);
 
-    let Arr = [], k = 0;
+    // Copy data to temp arrays L[] and R[]
+    for (var i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (var j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
 
-    for (let i = start; i <= end; i++) {
-        if (p > mid) {
-            Arr[k++] = towers_sizes[q++];
-            tower_update_color(divs[q - 1], "red");//Color update
-            await delay(5);
-        }
-        else if (q > end) {
-            Arr[k++] = towers_sizes[p++];
-            tower_update_color(divs[p - 1], "red");//Color update
-            await delay(5);
-        }
-        else if (towers_sizes[p] < towers_sizes[q]) {
-            Arr[k++] = towers_sizes[p++];
-            tower_update_color(divs[p - 1], "red");//Color update
-            await delay(5);
+    // Merge the temp arrays back into arr[l..r]
+
+    // Initial index of first subarray
+    var i = 0;
+
+    // Initial index of second subarray
+    var j = 0;
+
+    // Initial index of merged subarray
+    var k = l;
+
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+
+            towers_sizes[k] = L[i];
+            divs[k].style.height = `${0.3 * L[i]}rem`;
+            i++;
         }
         else {
-            Arr[k++] = towers_sizes[q++];
-            tower_update_color(divs[q - 1], "red");//Color update
-            await delay(5);
+            towers_sizes[k] = R[j];
+            divs[k].style.height = `${0.3 * R[j]}rem`;
+            j++;
         }
+        k++;
     }
 
-    for (var t = 0; t < k; t++) {
-        towers_sizes[start++] = Arr[t];
-        tower_update_color(divs[start - 1], "green");//Color update
-        await delay(5);
+    // Copy the remaining elements of
+    // L[], if there are any
+    while (i < n1) {
+        towers_sizes[k] = L[i];
+        divs[k].style.height = `${0.3 * L[i]}rem`;
+        i++;
+        k++;
+    }
+
+    // Copy the remaining elements of
+    // R[], if there are any
+    while (j < n2) {
+        towers_sizes[k] = R[j];
+        divs[k].style.height = `${0.3 * R[j]}rem`;
+        j++;
+        k++;
     }
 }
 
-function merge_partition(start, end) {
-    if (start < end) {
-        let mid = Math.floor((start + end) / 2);
-        tower_update_color(divs[mid], "yellow");//Color update
-        // await delay(5);
-
-        merge_partition(start, mid);
-        merge_partition(mid + 1, end);
-
-        MergeSort(start, mid, end);
+function mergeSort(arr, l, r) {
+    if (l >= r) {
+        return;
     }
+    var m = l + parseInt((r - l) / 2);
+    mergeSort(arr, l, m);
+    mergeSort(arr, m + 1, r);
+    merge(arr, l, m, r);
+
+    console.log(towers_sizes);
 }
+
