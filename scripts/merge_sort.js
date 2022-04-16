@@ -33,12 +33,17 @@ function merge(arr, l, m, r) {
         if (L[i] <= R[j]) {
 
             towers_sizes[k] = L[i];
-            divs[k].style.height = `${0.3 * L[i]}rem`;
+            if (sizeofArr > 32)
+                divs[k].style.height = `${0.3 * L[i]}rem`;
+            else
+                divs[k].style.height = `${L[i]}rem`;
             i++;
         }
         else {
             towers_sizes[k] = R[j];
-            divs[k].style.height = `${0.3 * R[j]}rem`;
+            if (sizeofArr > 32)
+                divs[k].style.height = `${0.3 * R[j]}rem`;
+            else divs[k].style.height = `${R[j]}rem`;
             j++;
         }
         k++;
@@ -48,7 +53,9 @@ function merge(arr, l, m, r) {
     // L[], if there are any
     while (i < n1) {
         towers_sizes[k] = L[i];
-        divs[k].style.height = `${0.3 * L[i]}rem`;
+        if (sizeofArr > 32)
+            divs[k].style.height = `${0.3 * L[i]}rem`;
+        else divs[k].style.height = `${L[i]}rem`;
         i++;
         k++;
     }
@@ -57,7 +64,9 @@ function merge(arr, l, m, r) {
     // R[], if there are any
     while (j < n2) {
         towers_sizes[k] = R[j];
-        divs[k].style.height = `${0.3 * R[j]}rem`;
+        if (sizeofArr > 32)
+            divs[k].style.height = `${0.3 * R[j]}rem`;
+        else divs[k].style.height = `${R[j]}rem`;
         j++;
         k++;
     }

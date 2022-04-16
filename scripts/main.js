@@ -70,7 +70,7 @@ function renderTowers(towers_sizes, size) {
   towers_sizes.forEach(function (ele) {
     const tower = document.createElement("div");
     divs.push(tower);
-    if (size > 32) tower.style.height = `${0.33 * ele}rem`;
+    if (size > 32) tower.style.height = `${0.35 * ele}rem`;
     else tower.style.height = `${ele}rem`;
     tower.classList.add("tower");
     towersContainer.appendChild(tower);
