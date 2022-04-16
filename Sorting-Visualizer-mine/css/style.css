@@ -1,0 +1,58 @@
+:root {
+  --main-bg-color: brown;
+  --accent-color: red;
+  --btn-color: yellow;
+  --borders-colors: gray;
+}
+
+.header {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  padding-bottom: 0.3rem;
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: space-between;
+}
+button {
+  padding: 0.5rem;
+  background-color: #aaa;
+  border-radius: 0.6rem;
+  border: none;
+}
+.navbar {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.6rem;
+}
+.tower {
+  width: 2rem;
+  background-color: red;
+}
+.towers-container {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  transition: 0.1s;
+}
+.visualizer-container {
+  /* padding: 5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-part {
+  background-color: #eee;
+}
+
+.generate-array-container {
+  display: flex;
+  flex-direction: column;
+}
