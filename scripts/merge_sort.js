@@ -82,6 +82,7 @@ export async function mergeSort(arr, l, r) {
     }
     var m = l + parseInt((r - l) / 2);
     tower_update_color(divs[m], comparisonColor);
+    await delay(mspeed - speedofAlgo);
     await mergeSort(arr, l, m);
     await mergeSort(arr, m + 1, r);
     await merge(arr, l, m, r);
