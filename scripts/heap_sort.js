@@ -1,8 +1,12 @@
-import { mspeed, speedofAlgo, sizeofArr, towers_update_color, towers_sizes, towers_update, divs, tower_update_color, delay, swapColor, comparisonColor, defaultTowerColor, SortedColor, disablebtns, enablebtns } from "./main.js";
+import { time_taken, mspeed, speedofAlgo, sizeofArr, towers_update_color, towers_sizes, towers_update, divs, tower_update_color, delay, swapColor, comparisonColor, defaultTowerColor, SortedColor, disablebtns, enablebtns } from "./main.js";
 
 export async function Heap() {
+    time_taken.textContent = "Time Taken: ";
+    var startTime = performance.now();
     disablebtns();
     await sort(towers_sizes);
+    var endTime = performance.now();
+    time_taken.textContent += `${(endTime - startTime).toPrecision(8)}` + " milliseconds";
     enablebtns();
 }
 async function sort(arr) {

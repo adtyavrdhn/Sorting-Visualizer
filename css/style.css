@@ -26,20 +26,23 @@ html {
   overflow-x: hidden;
 }
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent;
 }
-/* Optional: show position indicator in red */
+span {
+  font-weight: 500;
+}
 ::-webkit-scrollbar-thumb {
   background: #ff0000;
 }
 body {
   margin: 0;
   background-color: var(--main-bg-color);
+  font-family: "IBM Plex Sans", sans-serif;
 }
 .header {
   text-align: center;
-  font-family: "IBM Plex Sans", sans-serif;
+
   font-size: 3rem;
   padding-bottom: 0.3rem;
 }
@@ -47,7 +50,6 @@ body {
   display: flex;
   width: 60%;
   align-items: center;
-  /* gap: 3rem; */
   justify-content: space-between;
 }
 button {
@@ -99,7 +101,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .range-size {
@@ -114,4 +116,10 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

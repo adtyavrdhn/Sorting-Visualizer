@@ -24,6 +24,7 @@ export const defaultTowerColor = getComputedStyle(root).getPropertyValue(
 export const lookedatcolor = getComputedStyle(root).getPropertyValue(
   "--lookedat-color"
 );
+export const time_taken = document.querySelector(".time_taken");
 ////////////////
 const towersContainer = document.querySelector(".towers-container");
 const visualizerContainer = document.querySelector(".visualizer-container");

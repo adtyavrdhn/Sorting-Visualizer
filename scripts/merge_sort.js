@@ -1,8 +1,12 @@
-import { mspeed, speedofAlgo, sizeofArr, tower_update_height, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, SortedColor, lookedatcolor, disablebtns, enablebtns } from "./main.js";
+import { time_taken, mspeed, speedofAlgo, sizeofArr, tower_update_height, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, SortedColor, lookedatcolor, disablebtns, enablebtns } from "./main.js";
 
 export async function Merge() {
+    time_taken.textContent = "Time Taken: ";
+    var startTime = performance.now();
     disablebtns();
     await mergeSort(towers_sizes, 0, sizeofArr - 1);
+    var endTime = performance.now();
+    time_taken.textContent += `${(endTime - startTime).toPrecision(8)}` + " milliseconds";
     enablebtns();
 }
 export async function merge(arr, l, m, r) {
@@ -25,19 +29,20 @@ export async function merge(arr, l, m, r) {
     var k = l;
 
     while (i < n1 && j < n2) {
+        towers_update_color(divs[l + i], divs[m + j], comparisonColor);
         if (L[i] <= R[j]) {
-            tower_update_color(divs[k], lookedatcolor);
+            towers_update_color(divs[k], divs[i + l], swapColor);
             towers_sizes[k] = L[i];
             await delay(mspeed - speedofAlgo);
             if (sizeofArr > 32)
-                divs[k].style.height = `${0.3 * L[i]}rem`;
+                divs[k].style.height = `${0.33 * L[i]}rem`;
             else
                 divs[k].style.height = `${L[i]}rem`;
             i++;
 
         }
         else {
-            tower_update_color(divs[k], lookedatcolor);
+            tower_update_color(divs[k], divs[j + m], swapColor);
             await delay(mspeed - speedofAlgo);
             towers_sizes[k] = R[j];
             if (sizeofArr > 32)
@@ -50,7 +55,7 @@ export async function merge(arr, l, m, r) {
     }
 
     while (i < n1) {
-        tower_update_color(divs[k], lookedatcolor);
+        tower_update_color(divs[i + l], lookedatcolor);
         towers_sizes[k] = L[i];
         if (sizeofArr > 32)
             divs[k].style.height = `${0.3 * L[i]}rem`;
@@ -60,7 +65,7 @@ export async function merge(arr, l, m, r) {
     }
 
     while (j < n2) {
-        tower_update_color(divs[k], lookedatcolor);
+        tower_update_color(divs[j + m], lookedatcolor);
         towers_sizes[k] = R[j];
         if (sizeofArr > 32)
             divs[k].style.height = `${0.3 * R[j]}rem`;
@@ -81,8 +86,8 @@ export async function mergeSort(arr, l, r) {
         return;
     }
     var m = l + parseInt((r - l) / 2);
-    tower_update_color(divs[m], comparisonColor);
-    await delay(mspeed - speedofAlgo);
+    // tower_update_color(divs[m], comparisonColor);
+    // await delay(mspeed - speedofAlgo);
     await mergeSort(arr, l, m);
     await mergeSort(arr, m + 1, r);
     await merge(arr, l, m, r);
