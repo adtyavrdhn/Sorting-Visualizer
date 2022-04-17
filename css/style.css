@@ -19,11 +19,19 @@ input[type="range"] {
   box-sizing: border-box;
 }
 button:hover {
-  box-shadow: 0.1px 0.1px 15px 0.5px #c2c2c2;
+  box-shadow: 0.1px 0.1px 2px 0.1px #c2c2c2;
 }
 html {
   overflow: scroll;
   overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
 body {
   margin: 0;
