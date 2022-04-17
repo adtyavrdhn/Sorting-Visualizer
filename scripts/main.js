@@ -1,4 +1,5 @@
 import { BubbleSort } from "./bubble_sort.js";
+import { Heap } from "./heap_sort.js";
 import { InsertionSort } from "./insertion_sort.js";
 import { Merge } from "./merge_sort.js";
 import { Quick } from "./quick_sort.js";
@@ -19,7 +20,9 @@ export const comparisonColor = getComputedStyle(root).getPropertyValue(
 export const defaultTowerColor = getComputedStyle(root).getPropertyValue(
   "--default-tower-color"
 );
-
+export const lookedatcolor = getComputedStyle(root).getPropertyValue(
+  "--lookedat-color"
+);
 ////////////////
 const towersContainer = document.querySelector(".towers-container");
 const visualizerContainer = document.querySelector(".visualizer-container");
@@ -44,6 +47,7 @@ export let sizeofArr = sizeSlider.value;
 export let speedofAlgo = 1;
 export let divs = [];
 export let towers_sizes = [];
+export let mspeed = 450;
 export const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 /////////////////////
 function initialSetup() {
@@ -85,20 +89,27 @@ function changeSize(e) {
 function changeSpeed(e) {
   speedofAlgo = this.value;
 }
-export function towers_update(tower_1, tower_2) {
+export async function towers_update(tower_1, tower_2) {
   let height = tower_2.style.height;
   tower_2.style.height = tower_1.style.height;
   tower_1.style.height = height;
+  await delay(5)
 }
-export function towers_update_color(tower_1, tower_2, color) {
+export async function towers_update_color(tower_1, tower_2, color) {
   // console.log("here to update color");
+  await delay(100)
   tower_2.style.backgroundColor = tower_1.style.backgroundColor = color;
+  await delay(100)
 }
-export function tower_update_color(tower, color) {
+export async function tower_update_color(tower, color) {
+  await delay(105)
   tower.style.backgroundColor = color;
+  await delay(5);
 }
-export function tower_update_height(tower, height) {
+export async function tower_update_height(tower, height) {
+  await delay(5)
   tower.style.height = `${height}rem`;
+  await delay(5)
 }
 ////////////////////Event Listeners
 sizeSlider.addEventListener("input", changeSize);
@@ -109,3 +120,4 @@ insertionSortbtn.addEventListener("click", InsertionSort);
 mergeSortbtn.addEventListener("click", Merge);
 selectionSortbtn.addEventListener("click", SelectionSort);
 quickSortbtn.addEventListener("click", Quick);
+heapSortbtn.addEventListener("click", Heap);

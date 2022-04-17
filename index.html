@@ -21,9 +21,10 @@
           <label for="speed" class="speed">Speed of Algorithm</label>
           <input
             class="speed-range"
-            min="1"
-            max="10"
-            value="5"
+            min="0"
+            max="450"
+            value="100"
+            step="50"
             type="range"
             name="speed"
             id="speed-slider"
@@ -33,7 +34,7 @@
             <input
               class="size-range"
               min="30"
-              max="110"
+              max="100"
               value="60"
               type="range"
               name="size"
@@ -60,7 +61,12 @@
         </div>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <footer>
+      <p>Aditya Vardhan</p>
+      <a href="https://github.com/adtyavrdhn"
+        ><img src="/assets/icons8-github.svg" alt=""
+      /></a>
+    </footer>
     <script type="module" src="/scripts/selection_sort.js"></script>
     <script type="module" src="/scripts/bubble_sort.js"></script>
     <script type="module" src="/scripts/insertion_sort.js"></script>

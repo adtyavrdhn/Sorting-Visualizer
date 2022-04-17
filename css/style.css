@@ -1,17 +1,35 @@
 :root {
-  --main-bg-color: brown;
+  --main-bg-color: #f6f3f7;
   --accent-color: red;
-  --btn-color: yellow;
+  --btn-color: #e3dae7;
   --borders-colors: gray;
-  --swap-color: teal;
-  --sorted-color: brown;
-  --swap-failed-color: black;
-  --default-tower-color: red;
-  --comparision-tower-color: yellow;
+  --swap-color: #334833;
+  --sorted-color: #221825;
+  --swap-failed-color: #7f3959;
+  --default-tower-color: #4e3856;
+  --lookedat-color: #c2c2c2;
+  --comparision-tower-color: #5c5c5c;
+  --top-bg-color: #ede7ef;
+  --font-color: #ece7ee;
+}
+button:hover {
+  box-shadow: 0.1px 0.1px 15px 0.5px #c2c2c2;
+}
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
 body {
-  height: 100vh;
-  /* width: 100vh; */
+  margin: 0;
+  background-color: var(--main-bg-color);
 }
 .header {
   text-align: center;
@@ -27,7 +45,7 @@ body {
 }
 button {
   padding: 0.5rem;
-  background-color: #aaa;
+  background-color: var(--btn-color);
   border-radius: 0.6rem;
   border: none;
 }
@@ -35,11 +53,11 @@ button {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  padding: 0.6rem;
+  padding: 1rem;
 }
 .tower {
   width: 2rem;
-  background-color: red;
+  background-color: var(--default-tower-color);
   transition: 0.1s;
 }
 .towers-container {
@@ -51,17 +69,29 @@ button {
   transition: 0.1s;
 }
 .visualizer-container {
-  /* padding: 5rem; */
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 3rem;
 }
 
 .top-part {
-  background-color: #eee;
+  background-color: var(--top-bg-color);
 }
 
 .generate-array-container {
   display: flex;
   flex-direction: column;
 }
+
+footer {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* .towers-container > div:hover {
+  transform: scaleY(1.2);
+} */
