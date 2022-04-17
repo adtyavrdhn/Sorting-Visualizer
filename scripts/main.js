@@ -54,12 +54,10 @@ function initialSetup() {
   genArray(sizeofArr);
 }
 initialSetup();
-////////////////////Functions
-
+////////////////////Rendering Divs
 function genNewArray() {
   genArray(sizeofArr);
 }
-
 function genArray(size) {
   towers_sizes = [];
   towers_sizes = Array.from(
@@ -81,6 +79,8 @@ function renderTowers(towers_sizes, size) {
   });
 
 }
+
+//////////// Updating
 function changeSize(e) {
   sizeofArr = this.value;
   towersContainer.innerHTML = "";

@@ -12,20 +12,18 @@
   --top-bg-color: #ede7ef;
   --font-color: #ece7ee;
 }
+input[type="range"] {
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  box-sizing: border-box;
+}
 button:hover {
   box-shadow: 0.1px 0.1px 15px 0.5px #c2c2c2;
 }
 html {
   overflow: scroll;
   overflow-x: hidden;
-}
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #ff0000;
 }
 body {
   margin: 0;
@@ -39,8 +37,9 @@ body {
 }
 .btn-container {
   display: flex;
+  width: 60%;
   align-items: center;
-  gap: 3rem;
+  /* gap: 3rem; */
   justify-content: space-between;
 }
 button {
@@ -77,6 +76,7 @@ button {
 
 .top-part {
   background-color: var(--top-bg-color);
+  width: 100vw;
 }
 
 .generate-array-container {
@@ -91,7 +91,3 @@ footer {
   justify-content: center;
   gap: 1rem;
 }
-
-/* .towers-container > div:hover {
-  transform: scaleY(1.2);
-} */
