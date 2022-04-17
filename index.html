@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -18,28 +18,32 @@
       <header class="header">Sorting Visualizer</header>
       <nav class="navbar">
         <div class="range-input">
-          <label for="speed" class="speed">Speed of Algorithm</label>
-          <input
-            class="speed-range"
-            min="0"
-            max="450"
-            value="100"
-            step="50"
-            type="range"
-            name="speed"
-            id="speed-slider"
-          />
-          <div class="generate-array-container">
-            <label for="size" class="size">Size of Array</label>
+          <div class="range-speed">
+            <label for="speed" class="speed">Speed of Algorithm</label>
             <input
-              class="size-range"
-              min="20"
-              max="100"
-              value="60"
+              class="speed-range"
+              min="0"
+              max="450"
+              value="100"
+              step="50"
               type="range"
-              name="size"
-              id="size-slider"
+              name="speed"
+              id="speed-slider"
             />
+          </div>
+          <div class="generate-array-container">
+            <div class="range-size">
+              <label for="size" class="size">Size of Array</label>
+              <input
+                class="size-range"
+                min="10"
+                max="100"
+                value="60"
+                type="range"
+                name="size"
+                id="size-slider"
+              />
+            </div>
             <button class="generate-array">Generate Array</button>
           </div>
         </div>

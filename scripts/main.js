@@ -146,7 +146,7 @@ heapSortbtn.addEventListener("click", Heap);
 ////////////////////// Animations
 ///// Used: https://codepen.io/xoihazard/pen/QJVEJj by xoihazard
 const random_char = () => {
-  const possible = "0123456789";
+  const possible = "SortingVisualizer";
   return possible.charAt(Math.floor(Math.random() * possible.length));
 };
 
@@ -175,8 +175,8 @@ const shuffle = el => {
   const a = anime({
     targets: params,
     progress: 1,
-    delay: 100,
-    duration: 210,
+    delay: 10,
+    duration: 300,
     easing: 'easeInQuad',
     update: () => {
       el.textContent = mask(chars, params.progress);
@@ -191,7 +191,7 @@ const shuffle = el => {
     a.restart();
   };
 };
-anime.speed = 0.17;
+anime.speed = 0.1;
 for (const el of document.querySelectorAll('.header')) {
   shuffle(el);
 }
