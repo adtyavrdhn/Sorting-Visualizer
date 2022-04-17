@@ -4,6 +4,7 @@ import { InsertionSort } from "./insertion_sort.js";
 import { Merge } from "./merge_sort.js";
 import { Quick } from "./quick_sort.js";
 import { SelectionSort } from "./selection_sort.js";
+import anime from '../anime-master/lib/anime.es.js';
 ///////////Selecting Elements///////////
 ////Containers
 const root = document.querySelector(":root");
@@ -141,3 +142,56 @@ mergeSortbtn.addEventListener("click", Merge);
 selectionSortbtn.addEventListener("click", SelectionSort);
 quickSortbtn.addEventListener("click", Quick);
 heapSortbtn.addEventListener("click", Heap);
+
+////////////////////// Animations
+///// Used: https://codepen.io/xoihazard/pen/QJVEJj by xoihazard
+const random_char = () => {
+  const possible = "0123456789";
+  return possible.charAt(Math.floor(Math.random() * possible.length));
+};
+
+const mask = (chars, progress) => {
+  const masked = [];
+
+  for (let i = 0; i < chars.length; i++) {
+    const position = (i + 1) / chars.length;
+    if (position > progress) {
+      masked.push(random_char());
+    } else {
+      masked.push(chars[i]);
+    }
+  }
+
+  return masked.join('');
+};
+
+const shuffle = el => {
+  const chars = el.textContent.split('');
+
+  const params = {
+    progress: 0
+  };
+
+  const a = anime({
+    targets: params,
+    progress: 1,
+    delay: 100,
+    duration: 210,
+    easing: 'easeInQuad',
+    update: () => {
+      el.textContent = mask(chars, params.progress);
+    },
+    complete: () => {
+      el.classList.add('completed');
+    }
+  });
+
+  el.onclick = () => {
+    el.classList.remove('completed');
+    a.restart();
+  };
+};
+anime.speed = 0.17;
+for (const el of document.querySelectorAll('.header')) {
+  shuffle(el);
+}

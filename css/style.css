@@ -58,6 +58,7 @@ button {
   width: 2rem;
   background-color: var(--default-tower-color);
   transition: 0.1s;
+  border-radius: 4px 4px 4px 4px;
 }
 .towers-container {
   height: 100%;
