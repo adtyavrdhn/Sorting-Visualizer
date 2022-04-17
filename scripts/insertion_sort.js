@@ -1,5 +1,6 @@
-import { mspeed, speedofAlgo, sizeofArr, towers_sizes, towers_update_color, tower_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, SortedColor } from './main.js'
+import { mspeed, speedofAlgo, sizeofArr, towers_sizes, towers_update_color, tower_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, SortedColor, disablebtns, enablebtns } from './main.js'
 export async function InsertionSort() {
+    disablebtns();
     for (let j = 0; j < sizeofArr; j++) {
         tower_update_color(divs[j], comparisonColor);
         await delay(mspeed - speedofAlgo);
@@ -35,4 +36,6 @@ export async function InsertionSort() {
     }
     tower_update_color(divs[sizeofArr - 1], SortedColor);
     await delay(mspeed - speedofAlgo);
+
+    enablebtns();
 }

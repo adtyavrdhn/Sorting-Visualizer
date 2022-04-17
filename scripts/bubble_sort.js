@@ -1,5 +1,7 @@
-import { lookedatcolor, speedofAlgo, sizeofArr, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, mspeed, SortedColor } from './main.js'
+import { disablebtns, lookedatcolor, speedofAlgo, sizeofArr, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, mspeed, SortedColor, enablebtns } from './main.js'
+
 export async function BubbleSort() {
+  disablebtns();
   console.log(towers_sizes);
   console.log(divs);
   for (let i = 0; i < sizeofArr - 1; i++) {
@@ -27,4 +29,6 @@ export async function BubbleSort() {
   }
   tower_update_color(divs[0], SortedColor);
   await delay(mspeed - speedofAlgo);
+
+  enablebtns();
 }

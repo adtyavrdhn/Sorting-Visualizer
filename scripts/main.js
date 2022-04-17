@@ -111,6 +111,26 @@ export async function tower_update_height(tower, height) {
   tower.style.height = `${height}rem`;
   await delay(5)
 }
+export function disablebtns() {
+  mergeSortbtn.disabled = true;
+  selectionSortbtn.disabled = true;
+  insertionSortbtn.disabled = true;
+  heapSortbtn.disabled = true;
+  bubbleSortbtn.disabled = true;
+  genarraybtn.disabled = true;
+  quickSortbtn.disabled = true;
+  sizeSlider.disabled = true;
+}
+export function enablebtns() {
+  mergeSortbtn.disabled = false;
+  selectionSortbtn.disabled = false;
+  insertionSortbtn.disabled = false;
+  heapSortbtn.disabled = false;
+  bubbleSortbtn.disabled = false;
+  genarraybtn.disabled = false;
+  quickSortbtn.disabled = false;
+  sizeSlider.disabled = false;
+}
 ////////////////////Event Listeners
 sizeSlider.addEventListener("input", changeSize);
 speedSlider.addEventListener("input", changeSpeed);

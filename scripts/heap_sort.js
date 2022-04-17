@@ -1,7 +1,9 @@
-import { mspeed, speedofAlgo, sizeofArr, towers_update_color, towers_sizes, towers_update, divs, tower_update_color, delay, swapColor, comparisonColor, defaultTowerColor, SortedColor } from "./main.js";
+import { mspeed, speedofAlgo, sizeofArr, towers_update_color, towers_sizes, towers_update, divs, tower_update_color, delay, swapColor, comparisonColor, defaultTowerColor, SortedColor, disablebtns, enablebtns } from "./main.js";
 
 export async function Heap() {
+    disablebtns();
     await sort(towers_sizes);
+    enablebtns();
 }
 async function sort(arr) {
     var n = arr.length;

@@ -1,8 +1,9 @@
-import { mspeed, speedofAlgo, sizeofArr, towers_update_color, towers_sizes, towers_update, divs, tower_update_color, delay, swapColor, SortedColor, defaultTowerColor, comparisonColor } from "./main.js";
+import { mspeed, speedofAlgo, sizeofArr, towers_update_color, towers_sizes, towers_update, divs, tower_update_color, delay, swapColor, SortedColor, defaultTowerColor, comparisonColor, disablebtns, enablebtns } from "./main.js";
 
 export async function Quick() {
-
-    quickSort(towers_sizes, 0, sizeofArr - 1);
+    disablebtns();
+    await quickSort(towers_sizes, 0, sizeofArr - 1);
+    enablebtns();
 }
 
 async function swap(arr, i, j) {

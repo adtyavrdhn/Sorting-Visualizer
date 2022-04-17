@@ -1,7 +1,9 @@
-import { mspeed, speedofAlgo, sizeofArr, tower_update_height, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, SortedColor, lookedatcolor } from "./main.js";
+import { mspeed, speedofAlgo, sizeofArr, tower_update_height, tower_update_color, towers_sizes, towers_update_color, towers_update, swapColor, swapFailColor, comparisonColor, divs, delay, defaultTowerColor, SortedColor, lookedatcolor, disablebtns, enablebtns } from "./main.js";
 
 export async function Merge() {
+    disablebtns();
     await mergeSort(towers_sizes, 0, sizeofArr - 1);
+    enablebtns();
 }
 export async function merge(arr, l, m, r) {
     var n1 = m - l + 1;

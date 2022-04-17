@@ -1,7 +1,7 @@
-import { speedofAlgo, divs, delay, sizeofArr, towers_update, towers_update_color, tower_update_color, towers_sizes, mspeed, SortedColor, defaultTowerColor, comparisonColor, swapFailColor, swapColor } from "./main.js";
+import { speedofAlgo, divs, delay, sizeofArr, towers_update, towers_update_color, tower_update_color, towers_sizes, mspeed, SortedColor, defaultTowerColor, comparisonColor, swapFailColor, swapColor, disablebtns, enablebtns } from "./main.js";
 
 export async function SelectionSort() {
-
+    disablebtns();
     for (var i = 0; i < sizeofArr - 1; i++) {
         await delay(mspeed - speedofAlgo);
         tower_update_color(divs[i], swapFailColor);//Color update
@@ -43,4 +43,6 @@ export async function SelectionSort() {
     }
     tower_update_color(divs[i], SortedColor);//Color update
     await delay(mspeed - speedofAlgo);
+
+    enablebtns();
 }
