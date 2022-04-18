@@ -12,6 +12,11 @@
   --top-bg-color: #ede7ef;
   --font-color: #ece7ee;
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 input[type="range"] {
   background-color: transparent;
   accent-color: #221825;
