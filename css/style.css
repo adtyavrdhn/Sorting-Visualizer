@@ -128,3 +128,71 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    font-size: 1.8rem;
+  }
+  button {
+    padding: 0.5rem;
+  }
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .range-input {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  input[type="range"] {
+    width: 6rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .header {
+    font-size: 1.4rem;
+  }
+  button {
+    padding: 0.5rem;
+  }
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .range-input {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  input[type="range"] {
+    width: 5rem;
+  }
+  .range-input {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .towers-container {
+    /* max-height: 15rem; */
+    /* position: relative; */
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .header {
+    font-size: 1.4rem;
+  }
+  button {
+    padding: 0.5rem;
+    scale: 0.8;
+  }
+  .btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .range-input {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  input[type="range"] {
+    width: 4rem;
+  }
+}
